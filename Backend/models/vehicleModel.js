@@ -1,14 +1,12 @@
 import mongoose from 'mongoose';
 
 const vehicleSchema = new mongoose.Schema({
-  model: String,
-  type: String,
-  location: String,
-  price: Number,
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  },
-});
+  name: { type: String, required: true },
+  model: { type: String, required: true },
+  location: { type: String, required: true },
+  price: { type: Number, required: true },
+  mileage: { type: Number },
+  type: { type: String, required: true },
+}, { timestamps: true });
 
 export default mongoose.model('Vehicle', vehicleSchema);
