@@ -19,12 +19,9 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('✅ MongoDB connected'))
-.catch(err => console.error('❌ MongoDB error:', err.message));
+.catch((err) => console.error('❌ MongoDB error:', err));
 
 // API Routes
 app.use('/api/users', userRoutes);         // GET, POST, PUT, DELETE
