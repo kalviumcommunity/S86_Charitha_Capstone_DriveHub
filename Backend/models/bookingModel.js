@@ -1,8 +1,9 @@
+// models/bookingModel.js
 import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema({
-  name: { type: String, required: true }, // Customer name
-  vehicle: { type: String, required: true }, // Vehicle name
+  name: { type: String, required: true },  // customer name
+  vehicle: { type: String, required: true }, // vehicle name
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },
   status: {
